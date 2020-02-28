@@ -1,3 +1,8 @@
+/**
+ * @author Andres Ramirez
+ *
+ */
+
 package com.perscholas.buycycle;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,3 +1,8 @@
+/**
+ * @author Andres Ramirez
+ *
+ */
+
 package com.perscholas.buycycle.configuration;
 
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;

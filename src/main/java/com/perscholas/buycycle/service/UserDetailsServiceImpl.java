@@ -1,3 +1,8 @@
+/**
+ * @author Andres Ramirez
+ *
+ */
+
 package com.perscholas.buycycle.service;
 
 import java.util.ArrayList;
