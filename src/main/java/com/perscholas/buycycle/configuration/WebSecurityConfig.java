@@ -20,26 +20,26 @@ import com.perscholas.buycycle.service.UserDetailsServiceImpl;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
-	//Necesario para evitar que la seguridad se aplique a los resources
-    //Como los css, imagenes y javascripts
+	//to prevent security from being applied to resources (css, img, js)
+
     String[] resources = new String[]{
             "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**"
     };
 	
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
+    protected void configure( HttpSecurity http ) throws Exception {
+        	http
             .authorizeRequests()
-	        .antMatchers(resources).permitAll()  
-	        .antMatchers("/","/index").permitAll()
-	        .antMatchers("/admin*").access("hasRole('ADMIN')")
-	        .antMatchers("/user*").access("hasRole('USER') or hasRole('ADMIN')")
+	        .antMatchers( resources ).permitAll()  
+	        .antMatchers( "/","/index" ).permitAll()
+	        .antMatchers( "/admin*" ).access( "hasRole('ADMIN')" )
+	        .antMatchers( "/user*" ).access( "hasRole('USER')or hasRole('ADMIN')" )
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
-                .loginPage("/login")
+                .loginPage( "/login" )
                 .permitAll()
-                .defaultSuccessUrl("/menu")
+                .defaultSuccessUrl( "/menu" )
                 .failureUrl("/login?error=true")
                 .usernameParameter("username")
                 .passwordParameter("password")
@@ -49,26 +49,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .logoutSuccessUrl("/login?logout");
     }
     BCryptPasswordEncoder bCryptPasswordEncoder;
-    //Crea el encriptador de contraseñas	
+    //Create password encryptor	
+    
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-		bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
-//El numero 4 representa que tan fuerte quieres la encriptacion.
-//Se puede en un rango entre 4 y 31. 
-//Si no pones un numero el programa utilizara uno aleatoriamente cada vez
-//que inicies la aplicacion, por lo cual tus contrasenas encriptadas no funcionaran bien
+		bCryptPasswordEncoder = new BCryptPasswordEncoder(4); 
+		// Number 4 represents how strong you want encryption (4-31)
+		//If you do not enter a number, the program will use one randomly each time
+		//for encrypted passwords work
         return bCryptPasswordEncoder;
     }
 	
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 	
-    //Registra el service para usuarios y el encriptador de contrasena
+    //Register the service for users and the password encrypted
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { 
  
-        // Setting Service to find User in the database.
-        // And Setting PassswordEncoder
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());     
     }	
 }
