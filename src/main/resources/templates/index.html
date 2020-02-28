@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+    <!-- Add my personal Kit's Code from Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+    <title> Home </title>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>		
+		<div class="modal-dialog text-center">
+			<div class="col-sm-8 main-section">
+				<div class="modal-content">
+					<div class="col-12 user-img">
+						<img alt="user" src="../img/woman-avatar.png"/>
+					</div>
+					<form class="col-12" th:action="@{/login}" method="post">
+						<div class="form-group" id="user-group">
+							<input 	type="text" class="form-control" 
+									placeholder="Rider Name" name="username"/>
+						</div>
+						<div class="form-group" id="contrasena-group">
+							<input 	type="password" class="form-control" 
+									placeholder="P a s s w o r d" name="password"/>
+						</div>
+						<button type="submit" class="btn btn-primary">
+						<i class="fas fa-bicycle"></i>...Let's ride
+						</button>
+					</form>
+	                <div class="col-12 forgot">
+	                    <a href="#">Forgot password?</a>
+	                </div>
+	                <div th:if="${param.error}" class="alert alert-danger" role="alert">
+			            Invalid username and password.
+			        </div>
+			        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+			            You have been logged out.
+			        </div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
