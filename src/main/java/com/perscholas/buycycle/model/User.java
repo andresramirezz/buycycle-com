@@ -1,3 +1,9 @@
+/**
+ * @author Andres Ramirez
+ *
+ */
+
+
 package com.perscholas.buycycle.model;
 
 import java.util.Set;
