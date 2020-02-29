@@ -19,49 +19,210 @@
     <title> AddBike </title>
 
 </head>
-</head>
+
 <body>
 
   	<div class="container">
 		<div class="row>">
 			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
 			  <fieldset>
-				  <legend class="center-block">New Bike Information</legend>
-				  <span style="font-size: small">* is a required field</span>
+				  <legend class="center-block">New Bike Information
+				  <span style="font-size: small"> (* is a required field)</span></legend>
+				  
 				  
 					  <div class="form-group">
-					    <label for="title">* Title</label>
-					   <input 	type="text" class="form-control" id="title" th:value="${bike_catalog.title}"
+					    <label class="col-md-2 control-label" for="title">* Title</label>
+					   	<div class="col-md-4">
+					   	<input 	type="text" class="form-control" id="title" th:value="${bike_catalog.title}"
 					    		required="required" placeholder="Title" name="title" />
 					    		<span class="help-block">Title of the bike</span>
+					    </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label for="author">* Author</label>
+					    <label class="col-md-2 control-label" for="author">* Author</label>
+					    <div class="col-md-4">
 					    <input 	type="text" class="form-control" id="author" th:value="${bike_catalog.author}"
 					    		required="required" placeholder="Author" name="author"/>
 					    		<span class="help-block">Author of the bike</span>
 					  </div>
+					  </div>
 
 					  <div class="form-group">
-					    <label for="publisher">Publisher</label>
-					   <input 	type="text" class="form-control" id="publisher" th:value="${bike_catalog.publisher}"
-					    		required="required" placeholder="Publisher" />
+					    <label class="col-md-2 control-label" for="publisher">Publisher</label>
+					    <div class="col-md-4">
+					   	<input 	type="text" class="form-control" id="publisher" th:value="${bike_catalog.publisher}"
+					    		required="required" placeholder="Publisher" name="publisher"/>
 					    		<span class="help-block">Publisher of the bike</span>
 					  </div>
-
-					  <div class="form-group">
-					    <label for="publicationDate">Publication Date</label>
-					   <input 	type="date" class="form-control" id="publicationDate" th:value="${bike_catalog.publicationDate}"
-					    		required="required" placeholder="Publication Date of the bike" />
-					    		<span class="help-block">Publication Date of the bike</span>
 					  </div>
 
-				  
-				  <button type="submit" class="btn btn-default">Submit</button>
+					  <div class="form-group">
+					    <label class="col-md-2 control-label" for="publicationDate">Publication Date</label>
+					   <div class="col-md-4">
+					   <input 	type="date" class="form-control" id="publicationDate" th:value="${bike_catalog.publicationDate}"
+					    		required="required" placeholder="Publication Date of the bike" name="publicationDate"/>
+					    		<span class="help-block">Publication Date of the bike</span>
+					  </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label"for="language">Language</label>
+					   <div class="col-md-4">
+					   		<select th:value="${bike_catalog.language}" id="language" name="language" class="form-control">
+					   			<option value="english">English</option>
+					   			<option value="spanish">Spanish</option>
+					   		</select>
+					   </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-1 control-label"for="category">*Category</label>
+						   <div class="col-md-4">
+						   		<select th:value="${bike_catalog.category}" id="category" class="form-control" name="category">
+						   			<option value="" selected="selected" disabled="disabled">Please select an option</option>
+						   			<option value="Management" th:selected="(${bike_catalog.category}=='Management')">Management</option>
+						   			<option value="Fiction" th:selected="(${bike_catalog.category}=='Fiction')">Fiction</option>
+						   		</select>
+						   </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label" for="pageNumber">Pages</label>
+					   <div class="col-md-4"> 
+					   <input 	type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfPages}"
+					    		required="required" placeholder="Publisher" name="numberOfPages"/>
+					    		<span class="help-block">Number of pages of the bike</span>
+					  </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label"for="format">Format</label>
+						   <div class="col-md-4">
+						   		<select th:value="${bike_catalog.format}" id="format" class="form-control" name="format">
+						   			<option value="paperback">Paperback</option>
+						   			<option value="paperback">Hardcover</option>
+						   		</select>
+						   </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label" for="isbn">ISBN</label>
+					   	<div class="col-md-4">
+					   	<input 	type="text" class="form-control" id="isbn" th:value="${bike_catalog.isbn}"
+					    		placeholder="ISBN" name="isbn"/>
+					    		<span class="help-block">ISBN of the bike</span>
+					  </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label" for="shippingWeight">Shipping Weight</label>
+						   	<div class="col-md-2">
+						   		<div class="input-group">
+								   	<input 	th:value="${bike_catalog.shippingWeight}" type="number"
+								   			class="form-control" id="shippingWeight"
+								    		placeholder="Shipping Weight" name="shippingWeight" />
+							   	</div>
+							   	<span class="help-block">Shipping Weight of the bike</span>
+						   	</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label"for="listPrice">list Price</label>
+						   	<div class="col-md-2">
+						   		<div class="input-group">
+						   		<span class="input-group-addon">USD$</span>
+								   	<input 	th:value="${bike_catalog.listPrice}" type="number"
+								   			class="form-control" id="listPrice"
+								    		placeholder="list Price" name="listPrice"/>
+							   	</div>
+							   	<span class="help-block">list Price of the bike</span>
+						   	</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label"for="ourPrice">Our Price</label>
+						   	<div class="col-md-2">
+						   		<div class="input-group">
+						   		<span class="input-group-addon">USD$</span>
+								   	<input 	th:value="${bike_catalog.ourPrice}" type="number"
+								   			class="form-control" id="ourPrice"
+								    		placeholder="Our Price" name="ourPrice"/>
+							   	</div>
+							   	<span class="help-block">Our Price of the bike</span>
+						   	</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label"for="inStockNumber">Number in stock</label>
+						   	<div class="col-md-2">
+						   		<div class="input-group">
+						   		<span class="input-group-addon">USD$</span>
+								   	<input 	th:value="${bike_catalog.inStockNumber}" type="number"
+								   			class="form-control" id="inStockNumber"
+								    		placeholder="Number of in-stock bikes" name="inStockNumber"/>
+							   	</div>
+							   	<span class="help-block">Number of in-stock bikes</span>
+						   	</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label class="col-md-2 control-label" for="status">Status</label>
+							<div class="col-md-8">
+							   		<label><input value="true" type="radio" name="active" checked="checked" class="form-control" />Active</label>
+							   		<label><input value="false" type="radio" name="active" class="form-control" />Inactive</label>
+						   	<span class="help-block">Whether the bike is active or inactive</span>
+						   	</div>
+					  </div>
+
+					  <div class="form-group">
+					    	<label class="col-md-2 control-label" for="description">Description</label>
+					    	<div class="col-md-8">
+					   		<textarea name="description" rows="5" 
+					   					class="form-control" id="description" th:value="${bike_catalog.description}"
+					    				placeholder="Description" ></textarea>
+					    	<span class="help-block">Description of the bike</span>
+					  </div>
+					  
+					  <div class="form-group">
+					  	<div class="col-md-2">
+					  		<label for="bikeImage">Upload Bicycle image</label>
+					  	</div>
+					  	<div class="col-md-8">
+					  		<input id="bikeImage" type="file" name="bikeImage" th:value="${bike_catalog.bikeImage}" />	
+					  	</div>
+					  </div>
+
+				  <div clas="form-group">
+				  <div class="col-md-2"></div>
+				  <div class="col-md-8">
+				  		<button type="submit" class="tn btn-success">Add Bike</button>
+				  		<a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
+				  </div>
+				  </div>
 			  </fieldset>
 			</form>
 		</div>
 	</div>
  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
