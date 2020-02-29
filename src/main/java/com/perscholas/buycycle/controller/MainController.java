@@ -33,4 +33,11 @@ public class MainController {
 	public String admin() {
 		return "admin";
 	}
+	
+//	@GetMapping("/addBike")
+//	public String addBike() {
+//		return "addBike";
+//	}
+	
+	
 }

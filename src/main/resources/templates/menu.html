@@ -14,7 +14,7 @@
 
 	
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css" th:href="@{/css/menu.css}">
 
     <title>Welcome to BuyCycle.com!</title>
 </head>
@@ -25,19 +25,66 @@
     </form>
     <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
  -->	  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>		
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-6 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="../img/man-avatar.png"/>
+                </div>
 		<div class="alert alert-success" role="alert">
+		  
 		  <h4 class="alert-heading">Well done!</h4>
 
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Cerrar Sesion"/>
-    </form>
-    <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
+   			 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+   			 <form th:action="@{/logout}" method="post">
+   		     <input type="submit" value="Logout"/>
+  			  </form>
+  			  <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
 
 		  
-		  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+		  <p>Aww yeah, you successfully read this important alert message. This example 
+		  text is going to run a bit longer so that you can see how spacing.</p>
 		  <hr>
-		  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+		  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep 
+		  things nice and tidy.</p>
+			
 		</div>
+
+
+
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

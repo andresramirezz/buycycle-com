@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="common-header">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--JQUERY-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+    <!-- My personal Kit's Code from Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/admin.css" th:href="@{/css/admin.css}"/>
+    <title> AddBike </title>
+
+</head>
+</head>
+<body>
+
+  	<div class="container">
+		<div class="row>">
+			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
+			  <fieldset>
+				  <legend class="center-block">New Bike Information</legend>
+				  <span style="font-size: small">* is a required field</span>
+				  
+					  <div class="form-group">
+					    <label for="title">* Title</label>
+					   <input 	type="text" class="form-control" id="title" th:value="${bike_catalog.title}"
+					    		required="required" placeholder="Title" name="title" />
+					    		<span class="help-block">Title of the bike</span>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="author">* Author</label>
+					    <input 	type="text" class="form-control" id="author" th:value="${bike_catalog.author}"
+					    		required="required" placeholder="Author" name="author"/>
+					    		<span class="help-block">Author of the bike</span>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="publisher">Publisher</label>
+					   <input 	type="text" class="form-control" id="publisher" th:value="${bike_catalog.publisher}"
+					    		required="required" placeholder="Publisher" />
+					    		<span class="help-block">Publisher of the bike</span>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="publicationDate">Publication Date</label>
+					   <input 	type="date" class="form-control" id="publicationDate" th:value="${bike_catalog.publicationDate}"
+					    		required="required" placeholder="Publication Date of the bike" />
+					    		<span class="help-block">Publication Date of the bike</span>
+					  </div>
+
+				  
+				  <button type="submit" class="btn btn-default">Submit</button>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+ </body>
+</html>

@@ -1,12 +1,12 @@
 body{
-	background: url(../img/tiffany-nutt.jpg) no-repeat center center fixed;
+	background: url(../img/HomePage.gif) no-repeat center center fixed;
 	background-size: cover;
 }
 
 .main-section{
     margin:0 auto;
-    margin-top:85%;
-    margin-left:105%;
+    margin-top:15%;
+    margin-left:125%;
     padding: 0;
 }
 
@@ -52,10 +52,10 @@ body{
     content: "\f023";
 }
 
-/* button{
+button{
     width: 100%;
     margin: 5px 0 25px;
- */}
+}
 
 .forgot{
     padding: 5px 0;
