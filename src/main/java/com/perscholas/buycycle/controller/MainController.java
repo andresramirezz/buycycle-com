@@ -34,10 +34,6 @@ public class MainController {
 		return "admin";
 	}
 	
-//	@GetMapping("/addBike")
-//	public String addBike() {
-//		return "addBike";
-//	}
 	
 	
 }

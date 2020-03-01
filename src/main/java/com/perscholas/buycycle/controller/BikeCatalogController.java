@@ -1,8 +1,8 @@
 package com.perscholas.buycycle.controller;
 
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,13 +54,31 @@ public class BikeCatalogController {
 
 	@RequestMapping ( "/bikeList" )
 	public String bikeList ( Model model ) {
-//		List<BikeCatalog> = bikeCatalogService.findAll();
+		List<BikeCatalog> bikeList = bikeCatalogService.findAll();
+		model.addAttribute("bikeList", bikeList);
 		
 		return "bikeList";
 	}
 	
+	@RequestMapping ( "/bikeshelf" )
+	public String bikeshelf ( Model model ) {
+		List<BikeCatalog> bikeshelf = bikeCatalogService.findAll();
+		model.addAttribute("bikeList", bikeshelf);
+		
+		return "bikeshelf";
+	}
+
 	
 }
+
+
+
+
+
+
+
+
+
 
 
 

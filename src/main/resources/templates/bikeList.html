@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>bikeList</title>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="common-header">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--JQUERY-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+    <!-- My personal Kit's Code from Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/admin.css" th:href="@{/css/admin.css}"/>
+    <title> bikeList </title>
+
 </head>
+
 <body>
-	<h1>Bike List Page</h1>
+
+<div class="container">
+	<div class="table-responsive">
+		<table id="bikeListTable" class="table table-bordered table-hover table-striped">
+		  <thead>
+		    <tr>
+		      <th>Title</th>
+		      <th>Author</th>
+		      <th>Category</th>
+		      <th>List Price</th>
+		      <th>Our Price</th>
+		      <th>Active?</th>
+		      <th>Operation</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr data-th-each="bike_catalog : ${bikeList}">
+		      <!-- <td><input hidden="hidden" name="id" th:value="${bike_catalog.id}"></td> -->
+		      <td th:text="${bike_catalog.title}"></td>
+		      <td th:text="${bike_catalog.author}"></td>
+		      <td th:text="${bike_catalog.category}"></td>
+		      <td th:text="${bike_catalog.listPrice}"></td>
+		      <td th:text="${bike_catalog.ourPrice}"></td>
+		      <td th:text="${bike_catalog.active}"></td>
+		      <td>delete</td>
+		    </tr>
+		  </tbody>
+		  <!--Table body-->
+		</table>
+	</div>
+</div>	
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

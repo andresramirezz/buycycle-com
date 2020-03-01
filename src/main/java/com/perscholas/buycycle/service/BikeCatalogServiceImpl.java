@@ -1,5 +1,7 @@
 package com.perscholas.buycycle.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,11 @@ public class BikeCatalogServiceImpl implements BikeCatalogService{
 	
 	public BikeCatalog save ( BikeCatalog bc ) {
 		return bikeRepository.save(bc);
+	}
+
+	
+	public List<BikeCatalog> findAll() {
+		return (List<BikeCatalog>) bikeRepository.findAll();
 	}
 
 }

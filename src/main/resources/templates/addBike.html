@@ -89,11 +89,11 @@
 
 					  <div class="form-group">
 					    <label class="col-md-2 control-label" for="pageNumber">Pages</label>
-					   <div class="col-md-4"> 
-					   <input 	type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfPages}"
-					    		required="required" placeholder="Publisher" name="numberOfPages"/>
-					    		<span class="help-block">Number of pages of the bike</span>
-					  </div>
+						   <div class="col-md-4"> 
+						   <input type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfPages}"
+						    		required="required" placeholder="Publisher" name="numberOfPages"/>
+						    <span class="help-block">Number of pages of the bike</span>
+						  </div>
 					  </div>
 
 					  <div class="form-group">
@@ -108,11 +108,11 @@
 
 					  <div class="form-group">
 					    <label class="col-md-2 control-label" for="isbn">ISBN</label>
-					   	<div class="col-md-4">
-					   	<input 	type="text" class="form-control" id="isbn" th:value="${bike_catalog.isbn}"
-					    		placeholder="ISBN" name="isbn"/>
-					    		<span class="help-block">ISBN of the bike</span>
-					  </div>
+						   <div class="col-md-4">
+						   	<input 	type="text" class="form-control" id="isbn" th:value="${bike_catalog.isbn}"
+						    		placeholder="ISBN" name="isbn"/>
+						    <span class="help-block">ISBN of the bike</span>
+						  </div>
 					  </div>
 
 					  <div class="form-group">
@@ -178,51 +178,34 @@
 					  <div class="form-group">
 					    	<label class="col-md-2 control-label" for="description">Description</label>
 					    	<div class="col-md-8">
-					   		<textarea name="description" rows="5" 
-					   					class="form-control" id="description" th:value="${bike_catalog.description}"
+					   			<textarea name="description" rows="5" 
+					   			class="form-control" id="description" th:value="${bike_catalog.description}"
 					    				placeholder="Description" ></textarea>
-					    	<span class="help-block">Description of the bike</span>
+					    		<span class="help-block">Description of the bike</span>
+					  		</div>
 					  </div>
 					  
 					  <div class="form-group">
-					  	<div class="col-md-2">
-					  		<label for="bikeImage">Upload Bicycle image</label>
-					  	</div>
-					  	<div class="col-md-8">
-					  		<input id="bikeImage" type="file" name="bikeImage" th:value="${bike_catalog.bikeImage}" />	
-					  	</div>
+						  	<div class="col-md-2">
+						  		<label for="bikeImage">Upload Bicycle image</label>
+						  	</div>
+						  	<div class="col-md-8">
+						  		<input id="bikeImage" type="file" name="bikeImage" th:value="${bike_catalog.bikeImage}" />	
+						  	</div>
 					  </div>
 
-				  <div clas="form-group">
-				  <div class="col-md-2"></div>
-				  <div class="col-md-8">
-				  		<button type="submit" class="tn btn-success">Add Bike</button>
-				  		<a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
+				  <div class="form-group">
+					  	<div class="col-md-2">
+						  <div class="col-md-8">
+						  		<button type="submit" class="tn btn-success">Add Bike</button>
+						  		<a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
+						  </div>
+				  		</div>
 				  </div>
-				  </div>
+				  
 			  </fieldset>
 			</form>
 		</div>
 	</div>
  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
