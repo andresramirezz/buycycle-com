@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+    <!-- My personal Kit's Code from Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/bikeshelf.css" th:href="@{/css/bikeshelf.css}">
+<title> bikeshelf </title>
+</head>
+<body>
+<div class="container ">
+	<div class="row" style="margin-bottom: 80px;">
+		<div class="col-xs-8">
+			<h2 class="section-headline">
+				<h2 class="section-headline">
+					<!-- <span th:text="${#strings.toUpperCase(user.username)}"></span> -->
+					<span >Welcome User !</span>
+				</h2>
+			</h2>
+		</div>
+		<div class="col-xs-4">
+			<img src="/img/logo2.png" class="img-responsive">
+		</div>
+	</div>
+	<hr 
+		style="position: absolute; width: 100; height: 2px; background-color: #333; 
+		z-index: -1; margin-top: -20px" />
+	<img 	class="img-responsive" src="/img/logo.gif"
+			style="margin-top: -75px;"/>
+	
+	
+	<div class="row flow-offset-1" style="margin-top: 60px;">
+		<div class="col-md-12 col-md-10">
+			<div th:if="${emptyList}">
+				<h5> No result is found. Try again later...!</h5>
+			</div>
+			
+			<table border="1" id="bikeList" class="table table-bordered table-hover">
+				<thead><tr><th></th></tr></thead>
+				<tbody>
+				<tr class="bike-item" data-th-each="bike_catalog : ${bikeList}">
+					<td>
+						<div th:if="${bike_catalog != null}">
+							<div class="row">
+								<div class="col-md-3" >
+									<img class="img-responsive shelf-bike" th:src="@{/img/bike/}+${bike_catalog.id}+'.png'"
+									style="width: 250px;"/>
+								</div>
+								<div class="col-md-9">
+									<h4 th:text="${bike_catalog.title}"></h4>
+									<div class="row">
+										<div class="col-md-5">	
+											<h5><strong>Author: </strong><span th:text="${bike_catalog.author}"></span></h5>
+											<p><strong>Publication Date: </strong><span th:text="${bike_catalog.publicationDate}"></span></p>
+											<h6><strong>Language: </strong><span th:text="${#strings.capitalize(bike_catalog.language)}"></span></h6>
+											<h6><strong>Category: </strong><span th:text="${bike_catalog.category}"></span></h6>
+											<p><strong><span th:text="${bike_catalog.format}"></span>: </strong>
+												<span th:text="${bike_catalog.numberOfPages}"></span></p>
+											<h6><strong>ISBN: </strong><span th:text="${bike_catalog.isbn}"></span></h6>
+											<h6><strong>Shipping Weigth: </strong><span th:text="${bike_catalog.shippingWeight}"></span> kg.</h6>
+										</div>
+										<div class="col-md-7">	
+											<div class="panel panel-default" style="border-width: 5px; margin-top: 20px">
+												<div class="panel-body">
+													<div class="row">
+														<div class="col-md-12">
+															<h4>Our Price: <span style="font-size: x-large;color: #db3208;">$<span
+															th:text="${#numbers.formatDecimal(bike_catalog.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></h4>
+															<h6>Our Price: <span style="text-decoration: line-through;">$<span
+															th:text="${#numbers.formatDecimal(bike_catalog.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></h6>
+															<h6 style="color: green"><strong>In Stock: </strong><span th:text="${bike_catalog.inStockNumber}"></span></h6>
+															<button type="submit" class="btn btn-warning">Add to Cart</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr style="height: 12px;  border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);"/>
+									<p th:text="${#strings.abbreviate(bike_catalog.description, 500)}"></p>
+								</div >
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+	
+</div>	
+
+
+
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
