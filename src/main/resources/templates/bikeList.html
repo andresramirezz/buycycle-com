@@ -27,25 +27,29 @@
 		<table id="bikeListTable" class="table table-bordered table-hover table-striped">
 		  <thead>
 		    <tr>
-		      <th>Title</th>
-		      <th>Author</th>
+		      <th>Brand</th>
+		      <th>Owner</th>
 		      <th>Category</th>
 		      <th>List Price</th>
 		      <th>Our Price</th>
-		      <th>Active?</th>
-		      <th>Operation</th>
+		      <th>Active</th>
+		      <th>Function</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr data-th-each="bike_catalog : ${bikeList}">
 		      <!-- <td><input hidden="hidden" name="id" th:value="${bike_catalog.id}"></td> -->
-		      <td th:text="${bike_catalog.title}"></td>
-		      <td th:text="${bike_catalog.author}"></td>
+		      <td th:text="${bike_catalog.brand}"></td>
+		      <td th:text="${bike_catalog.owner}"></td>
 		      <td th:text="${bike_catalog.category}"></td>
 		      <td th:text="${bike_catalog.listPrice}"></td>
 		      <td th:text="${bike_catalog.ourPrice}"></td>
 		      <td th:text="${bike_catalog.active}"></td>
-		      <td>delete</td>
+		      <td>
+		      	<input hidden="hidden" name="id" th:value="${bike_catalog.id}"/>
+		      	<button th:id="${bike_catalog.id}" class="btn btn-danger btn-sm delete-bike" type="submit" value="delete">
+		      	<span class="fa fa-times"></span>Delete</button>
+		      </td>
 		    </tr>
 		  </tbody>
 		  <!--Table body-->

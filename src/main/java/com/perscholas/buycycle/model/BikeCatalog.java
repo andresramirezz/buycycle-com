@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author Andres Ramirez
+ * @owner Andres Ramirez
  *
  */
 
@@ -23,15 +23,15 @@ public class BikeCatalog {
 	@Id
 	@GeneratedValue( strategy=GenerationType.AUTO )
 	private Long id;
-	private String title;
-	private String author;
-	private String publisher;
+	private String brand;
+	private String owner;
+	private String nickname;
 	private String publicationDate;
-	private String language;
+	private String quality;
 	private String category;
-	private int numberOfPages;
+	private int numberOfMiles;
 	private String format;
-	private int isbn;
+	private int registerNumber;
 	private double shippingWeight;
 	private double listPrice;
 	private double ourPrice;
@@ -52,28 +52,28 @@ public class BikeCatalog {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getBrand() {
+		return brand;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBrand(String title) {
+		this.brand = title;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getOwner() {
+		return owner;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setOwner(String author) {
+		this.owner = author;
 	}
 
-	public String getPublisher() {
-		return publisher;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setNickname(String publisher) {
+		this.nickname = publisher;
 	}
 
 	public String getPublicationDate() {
@@ -84,12 +84,12 @@ public class BikeCatalog {
 		this.publicationDate = publicationDate;
 	}
 
-	public String getLanguage() {
-		return language;
+	public String getQuality() {
+		return quality;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setQuality(String language) {
+		this.quality = language;
 	}
 
 	public String getCategory() {
@@ -100,12 +100,12 @@ public class BikeCatalog {
 		this.category = category;
 	}
 
-	public int getNumberOfPages() {
-		return numberOfPages;
+	public int getNumberOfMiles() {
+		return numberOfMiles;
 	}
 
-	public void setNumberOfPages(int numberOfPages) {
-		this.numberOfPages = numberOfPages;
+	public void setNumberOfMiles(int numberOfPages) {
+		this.numberOfMiles = numberOfPages;
 	}
 
 	public String getFormat() {
@@ -116,12 +116,12 @@ public class BikeCatalog {
 		this.format = format;
 	}
 
-	public int getIsbn() {
-		return isbn;
+	public int getRegisterNumber() {
+		return registerNumber;
 	}
 
-	public void setIsbn(int isbn) {
-		this.isbn = isbn;
+	public void setRegisterNumber(int isbn) {
+		this.registerNumber = isbn;
 	}
 
 	public double getShippingWeight() {

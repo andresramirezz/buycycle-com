@@ -17,5 +17,28 @@
 </head>
 <body>
 	<h1>Welcome Andrea, Let´s Go Biking! </h1>
+		<div th:fragment="navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">USER Portal</a>
+		  <button 	class="navbar-toggler" type="button" data-toggle="collapse" 
+		  			data-target="#navbarNav" aria-controls="navbarNav" 
+		  			aria-expanded="false" aria-label="Toggle navigation">
+		    		<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+			      <li class="nav-item">
+			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
+			      </li>
+		    </ul>
+		  </div>
+		  <div>
+			   	<form th:action="@{/logout}" method="post">
+		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
+		  	 	</form>
+		  </div>
+		</nav>
+	</div>
+	
 </body>
 </html>

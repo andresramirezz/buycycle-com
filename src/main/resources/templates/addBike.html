@@ -31,29 +31,29 @@
 				  
 				  
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="title">* Title</label>
+					    <label class="col-md-2 control-label" for="brand">* Brand</label>
 					   	<div class="col-md-4">
-					   	<input 	type="text" class="form-control" id="title" th:value="${bike_catalog.title}"
-					    		required="required" placeholder="Title" name="title" />
-					    		<span class="help-block">Title of the bike</span>
+					   	<input 	type="text" class="form-control" id="brand" th:value="${bike_catalog.brand}"
+					    		required="required" placeholder="Brand" name="brand" />
+					    		<span class="help-block">Brand of the bike</span>
 					    </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="author">* Author</label>
+					    <label class="col-md-2 control-label" for="owner">* Owner</label>
 					    <div class="col-md-4">
-					    <input 	type="text" class="form-control" id="author" th:value="${bike_catalog.author}"
-					    		required="required" placeholder="Author" name="author"/>
-					    		<span class="help-block">Author of the bike</span>
+					    <input 	type="text" class="form-control" id="owner" th:value="${bike_catalog.owner}"
+					    		required="required" placeholder="Owner" name="owner"/>
+					    		<span class="help-block">Owner of the bike</span>
 					  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="publisher">Publisher</label>
+					    <label class="col-md-2 control-label" for="nickname">Nickname</label>
 					    <div class="col-md-4">
-					   	<input 	type="text" class="form-control" id="publisher" th:value="${bike_catalog.publisher}"
-					    		required="required" placeholder="Publisher" name="publisher"/>
-					    		<span class="help-block">Publisher of the bike</span>
+					   	<input 	type="text" class="form-control" id="nickname" th:value="${bike_catalog.nickname}"
+					    		required="required" placeholder="Nickname" name="nickname"/>
+					    		<span class="help-block">Nickname of the bike</span>
 					  </div>
 					  </div>
 
@@ -67,11 +67,12 @@
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="language">Language</label>
+					    <label class="col-md-2 control-label"for="quality">Conditions</label>
 					   <div class="col-md-4">
-					   		<select th:value="${bike_catalog.language}" id="language" name="language" class="form-control">
-					   			<option value="english">English</option>
-					   			<option value="spanish">Spanish</option>
+					   		<select th:value="${bike_catalog.quality}" id="quality" name="quality" class="form-control">
+					   			<option value="Like new">Like new</option>
+					   			<option value="Good condition">Good condition</option>
+					   			<option value="Need reparation">Need reparation</option>
 					   		</select>
 					   </div>
 					  </div>
@@ -81,43 +82,43 @@
 						   <div class="col-md-4">
 						   		<select th:value="${bike_catalog.category}" id="category" class="form-control" name="category">
 						   			<option value="" selected="selected" disabled="disabled">Please select an option</option>
-						   			<option value="Management" th:selected="(${bike_catalog.category}=='Management')">Management</option>
-						   			<option value="Fiction" th:selected="(${bike_catalog.category}=='Fiction')">Fiction</option>
+						   			<option value="Mountain Bike" th:selected="(${bike_catalog.category}=='Mountain Bike')">Mountain Bike</option>
+						   			<option value="Road Bike" th:selected="(${bike_catalog.category}=='Road Bike')">Road Bike</option>
 						   		</select>
 						   </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="pageNumber">Pages</label>
+					    <label class="col-md-2 control-label" for="numberOfMiles">Miles</label>
 						   <div class="col-md-4"> 
-						   <input type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfPages}"
-						    		required="required" placeholder="Publisher" name="numberOfPages"/>
-						    <span class="help-block">Number of pages of the bike</span>
+						   <input type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfMiles}"
+						    		required="required" placeholder="Number Of Miles" name="numberOfMiles"/>
+						    <span class="help-block">Miles of the bike</span>
 						  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="format">Format</label>
+					    <label class="col-md-2 control-label"for="format">Location</label>
 						   <div class="col-md-4">
 						   		<select th:value="${bike_catalog.format}" id="format" class="form-control" name="format">
-						   			<option value="paperback">Paperback</option>
-						   			<option value="paperback">Hardcover</option>
+						   			<option value="Out of USA">Out of USA</option>
+						   			<option value="USA">USA</option>
 						   		</select>
 						   </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="isbn">ISBN</label>
+					    <label class="col-md-2 control-label" for="registerNumber">Register Number</label>
 						   <div class="col-md-4">
-						   	<input 	type="text" class="form-control" id="isbn" th:value="${bike_catalog.isbn}"
-						    		placeholder="ISBN" name="isbn"/>
-						    <span class="help-block">ISBN of the bike</span>
+						   	<input 	type="text" class="form-control" id="registerNumber" th:value="${bike_catalog.registerNumber}"
+						    		placeholder="Register Number" name="registerNumber"/>
+						    <span class="help-block">Register Number of the bike</span>
 						  </div>
 					  </div>
 
 					  <div class="form-group">
 					    <label class="col-md-2 control-label" for="shippingWeight">Shipping Weight</label>
-						   	<div class="col-md-2">
+						   	<div class="col-md-3">
 						   		<div class="input-group">
 								   	<input 	th:value="${bike_catalog.shippingWeight}" type="number"
 								   			class="form-control" id="shippingWeight"
@@ -129,7 +130,7 @@
 
 					  <div class="form-group">
 					    <label class="col-md-2 control-label"for="listPrice">list Price</label>
-						   	<div class="col-md-2">
+						   	<div class="col-md-3">
 						   		<div class="input-group">
 						   		<span class="input-group-addon">USD$</span>
 								   	<input 	th:value="${bike_catalog.listPrice}" type="number"
@@ -142,7 +143,7 @@
 
 					  <div class="form-group">
 					    <label class="col-md-2 control-label"for="ourPrice">Our Price</label>
-						   	<div class="col-md-2">
+						   	<div class="col-md-3">
 						   		<div class="input-group">
 						   		<span class="input-group-addon">USD$</span>
 								   	<input 	th:value="${bike_catalog.ourPrice}" type="number"
@@ -157,12 +158,12 @@
 					    <label class="col-md-2 control-label"for="inStockNumber">Number in stock</label>
 						   	<div class="col-md-2">
 						   		<div class="input-group">
-						   		<span class="input-group-addon">USD$</span>
+						   		<span class="input-group-addon"></span>
 								   	<input 	th:value="${bike_catalog.inStockNumber}" type="number"
 								   			class="form-control" id="inStockNumber"
 								    		placeholder="Number of in-stock bikes" name="inStockNumber"/>
 							   	</div>
-							   	<span class="help-block">Number of in-stock bikes</span>
+							   	<span class="help-block">In-stock</span>
 						   	</div>
 					  </div>
 
@@ -171,7 +172,7 @@
 							<div class="col-md-8">
 							   		<label><input value="true" type="radio" name="active" checked="checked" class="form-control" />Active</label>
 							   		<label><input value="false" type="radio" name="active" class="form-control" />Inactive</label>
-						   	<span class="help-block">Whether the bike is active or inactive</span>
+						   	<span class="help-block"></span>
 						   	</div>
 					  </div>
 
@@ -195,9 +196,9 @@
 					  </div>
 
 				  <div class="form-group">
-					  	<div class="col-md-2">
+					  	<div class="col-md-6">
 						  <div class="col-md-8">
-						  		<button type="submit" class="tn btn-success">Add Bike</button>
+						  		<button type="submit" class="tn btn-lg btn-success">Add Bike</button>
 						  		<a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
 						  </div>
 				  		</div>
