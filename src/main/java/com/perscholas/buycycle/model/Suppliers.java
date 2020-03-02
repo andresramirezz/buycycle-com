@@ -1,6 +1,10 @@
 /**
+ * @author Andres Ramirez
+ * File: Suppliers.java
+ * Date 02/29/2020
  * 
  */
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;
@@ -17,18 +21,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * @author Andres Ramirez
- *
- */
 
 @Entity
 @Table( name = "suppliers" )
 public class Suppliers implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -181,5 +178,4 @@ public class Suppliers implements Serializable{
 	public void setSupplierType(SupplierType supplierType) {
 		this.supplierType = supplierType;
 	}
-
 }

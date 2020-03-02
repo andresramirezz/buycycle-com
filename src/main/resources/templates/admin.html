@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div>
-		<h5>Welcome Administrator!</h5>
+		<br/>
 		<img class="img-responsive center-block" th:src="@{/img/icon.png}" style="width: 250px;"/>
 	</div>
 
@@ -38,11 +38,15 @@
 			      <li class="nav-item">
 			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
 			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
+			      </li>
+
 		    </ul>
 		  </div>
 		  <div>
 			   	<form th:action="@{/logout}" method="post">
-		   		    <input type="submit" value="Logout"/>
+		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
 		  	 	</form>
 		  </div>
 		</nav>

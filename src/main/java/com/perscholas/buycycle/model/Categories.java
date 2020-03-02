@@ -1,6 +1,10 @@
 /**
+ * @author Andres Ramirez
+ * File: Categories.java
+ * Date 02/29/2020
  * 
  */
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;
@@ -14,10 +18,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * @author Andres Ramirez
- *
- */
 
 @Entity
 @Table( name = "categories" )

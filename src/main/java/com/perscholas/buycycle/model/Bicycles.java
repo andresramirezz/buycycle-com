@@ -1,6 +1,10 @@
 /**
+ * @author Andres Ramirez
+ * File: Bicycles.java
+ * Date 02/29/2020
  * 
  */
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;

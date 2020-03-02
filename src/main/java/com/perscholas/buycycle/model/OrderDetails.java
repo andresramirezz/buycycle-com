@@ -1,6 +1,11 @@
 /**
+ * @author Andres Ramirez
+ * File: OrderDetails.java
+ * Date 02/29/2020
  * 
  */
+
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;
@@ -15,18 +20,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * @author Andres Ramirez
- *
- */
-
 @Entity
 @Table( name = "orders_details" )
 public class OrderDetails implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

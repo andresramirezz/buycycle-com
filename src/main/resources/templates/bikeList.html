@@ -21,15 +21,14 @@
 </head>
 
 <body>
-
 	<div>
-		<h5>Welcome Administrator!</h5>
+		<br/>
 		<img class="img-responsive center-block" th:src="@{/img/icon.png}" style="width: 250px;"/>
 	</div>
 
 	<div th:fragment="navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">BICYCLE List</a>
+		  <a class="navbar-brand" href="#">ADMIN Portal</a>
 		  <button 	class="navbar-toggler" type="button" data-toggle="collapse" 
 		  			data-target="#navbarNav" aria-controls="navbarNav" 
 		  			aria-expanded="false" aria-label="Toggle navigation">
@@ -41,19 +40,18 @@
 			        <a class="nav-link" th:href="@{/addBike}">Add a new Bike <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
+			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
 			      </li>
+
 		    </ul>
 		  </div>
 		  <div>
 			   	<form th:action="@{/logout}" method="post">
-		   		    <input type="submit" value="Logout"/>
+		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
 		  	 	</form>
 		  </div>
 		</nav>
 	</div>
-
-
 <div class="container">
 	<div class="table-responsive">
 		<table id="bikeListTable" class="table table-bordered table-hover table-striped">
@@ -61,6 +59,7 @@
 		    <tr>
 		      <th>Brand</th>
 		      <th>Owner</th>
+		      <th>Nickname</th>
 		      <th>Category</th>
 		      <th>List Price</th>
 		      <th>Our Price</th>
@@ -73,6 +72,7 @@
 		      <!-- <td><input hidden="hidden" name="id" th:value="${bike_catalog.id}"></td> -->
 		      <td th:text="${bike_catalog.brand}"></td>
 		      <td th:text="${bike_catalog.owner}"></td>
+		      <td th:text="${bike_catalog.nickname}"></td>
 		      <td th:text="${bike_catalog.category}"></td>
 		      <td th:text="${bike_catalog.listPrice}"></td>
 		      <td th:text="${bike_catalog.ourPrice}"></td>
@@ -91,23 +91,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

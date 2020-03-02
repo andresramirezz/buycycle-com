@@ -1,3 +1,10 @@
+/**
+ * @author Andres Ramirez
+ * File: BikeCatalogController.java
+ * Date 02/29/2020
+ * 
+ */
+
 package com.perscholas.buycycle.controller;
 
 import java.io.BufferedOutputStream;
@@ -67,22 +74,4 @@ public class BikeCatalogController {
 		
 		return "bikeshelf";
 	}
-
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,10 @@
 /**
+ * @author Andres Ramirez
+ * File: Orders.java
+ * Date 02/29/2020
  * 
  */
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;
@@ -16,10 +20,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * @author Andres Ramirez
- *
- */
 
 @Entity
 @Table( name = "orders" )
@@ -121,5 +121,4 @@ public class Orders implements Serializable{
 	public void setCustomers(Customers customers) {
 		this.customers = customers;
 	}
-
 }

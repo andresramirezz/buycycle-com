@@ -1,6 +1,8 @@
 /**
  * @author Andres Ramirez
- *
+ * File: Authority.java
+ * Date 02/29/2020
+ * 
  */
 
 

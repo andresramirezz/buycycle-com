@@ -19,12 +19,6 @@
     <title>Welcome to BuyCycle.com!</title>
 </head>
 <body>
-<!--     <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Cerrar Sesion"/>
-    </form>
-    <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
- -->	  
     <div class="modal-dialog text-center">
         <div class="col-sm-6 main-section">
             <div class="modal-content">
@@ -37,7 +31,7 @@
 
    			 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
    			 <form th:action="@{/logout}" method="post">
-   		     <input type="submit" value="Logout"/>
+   		     <input type="submit" value="Logout" class="btn btn-warning"/>
   			  </form>
   			  <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
 
@@ -49,12 +43,8 @@
 		  things nice and tidy.</p>
 			
 		</div>
-
-
-
             </div>
         </div>
     </div>
-
 </body>
 </html>

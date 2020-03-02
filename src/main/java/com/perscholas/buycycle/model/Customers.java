@@ -1,6 +1,11 @@
 /**
+ * @author Andres Ramirez
+ * File: Customers.java
+ * Date 02/29/2020
  * 
  */
+
+
 package com.perscholas.buycycle.model;
 
 import java.io.Serializable;
@@ -14,18 +19,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * @author Andres Ramirez
- *
- */
 
 @Entity
 @Table( name = "customers" )
 public class Customers implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -81,7 +79,6 @@ public class Customers implements Serializable{
 		this.cus_state = cus_state;
 		this.cus_postal_code = cus_postal_code;
 		this.cus_phone = cus_phone;
-		//this.setCus_phone(cus_phone);
 	}
 
 	/**
@@ -216,7 +213,4 @@ public class Customers implements Serializable{
 	public void setCus_phone(String cus_phone) {
 		this.cus_phone = cus_phone;
 	}
-	
-	
-	
 }

@@ -1,6 +1,8 @@
 /**
  * @author Andres Ramirez
- *
+ * File: UserDetailsServiceImpl.java
+ * Date 02/29/2020
+ * 
  */
 
 package com.perscholas.buycycle.service;
@@ -46,5 +48,4 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
          return user;
     }
-
 }

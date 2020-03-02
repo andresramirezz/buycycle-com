@@ -1,15 +1,15 @@
 /**
+ * @author Andres Ramirez
+ * File: MainController.java
+ * Date 02/29/2020
  * 
  */
+
 package com.perscholas.buycycle.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- * @author Andres Ramirez
- *
- */
 
 @Controller
 public class MainController {
@@ -33,7 +33,4 @@ public class MainController {
 	public String admin() {
 		return "admin";
 	}
-	
-	
-	
 }

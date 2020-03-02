@@ -1,6 +1,8 @@
 /**
  * @author Andres Ramirez
- *
+ * File: User.java
+ * Date 02/29/2020
+ * 
  */
 
 

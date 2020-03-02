@@ -1,6 +1,11 @@
 /**
+ * @author Andres Ramirez
+ * File: BikeCatalog.java
+ * Date 02/29/2020
  * 
  */
+
+
 package com.perscholas.buycycle.model;
 
 import javax.persistence.Column;
@@ -12,10 +17,6 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- * @owner Andres Ramirez
- *
- */
 
 @Entity
 public class BikeCatalog {

@@ -16,10 +16,15 @@
 <title> User</title>
 </head>
 <body>
-	<h1>Welcome Andrea, Let´s Go Biking! </h1>
-		<div th:fragment="navbar">
+	<h2>Welcome, Let´s Go Biking! </h2>
+	<div>
+		<br/>
+		<img class="img-responsive center-block" th:src="@{/img/icon.png}" style="width: 250px;"/>
+	</div>
+
+	<div th:fragment="navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">USER Portal</a>
+		  <a class="navbar-brand" href="#">ADMIN Portal</a>
 		  <button 	class="navbar-toggler" type="button" data-toggle="collapse" 
 		  			data-target="#navbarNav" aria-controls="navbarNav" 
 		  			aria-expanded="false" aria-label="Toggle navigation">
@@ -28,8 +33,9 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
+			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
 			      </li>
+
 		    </ul>
 		  </div>
 		  <div>
@@ -38,7 +44,6 @@
 		  	 	</form>
 		  </div>
 		</nav>
-	</div>
-	
+	</div>	
 </body>
 </html>

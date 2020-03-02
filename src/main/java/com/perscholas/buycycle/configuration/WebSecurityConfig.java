@@ -1,6 +1,8 @@
 /**
  * @author Andres Ramirez
- *
+ * File: WebSecurityConfig.java
+ * Date 02/29/2020
+ * 
  */
 
 package com.perscholas.buycycle.configuration;

@@ -37,21 +37,21 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/addBike}">Add a new Bike <span class="sr-only">(current)</span></a>
-			      </li>
-			      <li class="nav-item">
 			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
 			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
+			      </li>
+
 		    </ul>
 		  </div>
 		  <div>
 			   	<form th:action="@{/logout}" method="post">
-		   		    <input type="submit" value="Logout"/>
+		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
 		  	 	</form>
 		  </div>
 		</nav>
 	</div>
-
   	<div class="container">
 		<div class="row>">
 			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
