@@ -32,19 +32,20 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     @Override
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-     //Buscar el usuario con el repositorio y si no existe lanzar una exepcion
+     // Search for the user with the repository and if it does not exist, launch an exception
     	com.perscholas.buycycle.model.User appUser = 
-                 userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
+                 userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("There is no user"));
 		
-    //Mapear nuestra lista de Authority con la de spring security 
-    List grantList = new ArrayList();
+    // Map our Authority list with the spring security list
+    List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
     for (Authority authority: appUser.getAuthority()) {
-        // ROLE_USER, ROLE_ADMIN,..
+        
+    	// ROLE_USER, ROLE_ADMIN
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(authority.getAuthority());
             grantList.add(grantedAuthority);
     }
 		
-    //Crear El objeto UserDetails que va a ir en sesion y retornarlo.
+    // Create The UserDetails object that will be in session and return it.
     UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
          return user;
     }
